@@ -13,7 +13,7 @@ const PatientTable = () => {
   const getAPI = async () => {
     const headers = {
       "Content-Type": "application/json",
-      Authorization: "Bearer DCPBVape5NTMaL7ah0oF1bqyOjwX",
+      Authorization: "Bearer Bf09JUg8y7RyXufV1Io5sHLyruvD",
     };
     try {
       const response = await axios.get(endPoint, {

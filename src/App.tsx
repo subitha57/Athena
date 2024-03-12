@@ -11,6 +11,11 @@ import SinglePatientView from './components/patient/SinglePatientView';
 
 import AvailableBed from './components/patient/AvailableBed';
 import PatientTable from './components/patient/chartAlert/PatientTable';
+import Delete from './components/patient/chartAlert/Delete';
+import Create from './components/patient/chartAlert/Create';
+import View from './components/patient/chartAlert/View';
+import PatientChart from './components/patient/chartAlert/PatientChart';
+import PatientForm from './components/patient/chartAlert/Index'
 
 
 const App: React.FC = () => {
@@ -26,6 +31,12 @@ const App: React.FC = () => {
        <Route path='/Events' element={<Events/>} />
        <Route path='/PatientInformation' element={<PatientInformation/>} />
        <Route path='/AvailableBed' element={<AvailableBed/>}/>
+       <Route path='/patient-form' Component={PatientForm}/>
+          <Route path='/patient-form/:id' Component={PatientForm}/>
+          <Route path='/patient-chart/:id' Component={PatientChart}/>
+          <Route path = '/Create' Component={Create}/>
+          <Route path = '/Delete' Component = {Delete}/>
+          <Route path='/View' Component={View}/>
     
       </Routes>
   );

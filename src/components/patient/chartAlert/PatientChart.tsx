@@ -1,10 +1,6 @@
 
 import { useNavigate} from 'react-router-dom';
 import { Button, Container, Row, Col } from 'reactstrap';
-import View from './View';
-
-import create from './Create';
-import Delete from './Delete';
 import Sidebar from '../../Sidebar';
 
 const PatientChart = () => {
@@ -25,7 +21,7 @@ const PatientChart = () => {
     
     return (
         <div>
-            <Sidebar/>
+            
         <Container>
             <Row>
                 <Col>
