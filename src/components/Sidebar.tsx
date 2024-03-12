@@ -47,7 +47,7 @@ export default function ResponsiveDrawer(props: Props) {
    navigate('/PatientList')
   }
   const HandlerSinglePatient =()=>{
-    navigate('')
+    navigate('/SinglePatientView')
   }
   const HandlerOptionalList =()=>{
     navigate("/PatientListOptional")
@@ -62,24 +62,31 @@ export default function ResponsiveDrawer(props: Props) {
   const HandlerSubscription =()=>{
     navigate("/Events")
   }
+  const HandleChartAlert =()=>{
+    navigate("/PatientChart")
+  }
+  const HandleAvailableBed=()=>{
+    navigate('/AvailableBed')
+  }
 
   const drawer = (
     <div>
        <Toolbar />
       <Divider />
       <List className='list'>
-      <Button>Chart Alert</Button><br/>
+     
        <Button onClick={HandlerPatientList}>Patient List</Button>
        <Button onClick={HandlerSinglePatient}>Single Patient List</Button>
        <Button onClick={HandlerOptionalList}>PatientList-Optional</Button>
        <Button onClick={HandlerPatientSearch}>SearchType</Button>
        <Button onClick={HandlerGenderIdentity}>GenderIdentity</Button>
-       <Button onClick={HandlerSubscription}>SubscriptionList</Button>
+      
 
       </List>
       <Divider />
       <List>
-      
+      <Button onClick={HandleChartAlert}>Chart Alert</Button><br/>
+      <Button onClick={HandleAvailableBed}>Available Beds</Button><br/>
       </List>
     </div>
   );

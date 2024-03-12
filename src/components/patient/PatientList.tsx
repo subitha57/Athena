@@ -19,7 +19,7 @@ const PatientTable: React.FC = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const token = 'qQMyFQncCZgpTGU0Xh4KjQ5hs1tg'; 
+        const token = '1wZ80jJPc8QOV5EC2Jii9QGuQM6G'; 
         const response = await axios.get('https://api.preview.platform.athenahealth.com/v1/195900/patients/enhancedbestmatch?firstname=First&lastname=Name&dob=11%2F11%2F1980', {
           headers: {
             Authorization: `Bearer ${token}`,

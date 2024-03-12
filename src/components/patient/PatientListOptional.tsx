@@ -12,7 +12,7 @@ const PatientList: React.FC = () => {
       try {
         const response = await fetch('https://api.preview.platform.athenahealth.com/v1/195900/patients/search?searchterm=null', {
           headers: {
-            'Authorization': 'Bearer qQMyFQncCZgpTGU0Xh4KjQ5hs1tg',
+            'Authorization': 'Bearer 1wZ80jJPc8QOV5EC2Jii9QGuQM6G',
             'Content-Type': 'application/json'
           }
         });

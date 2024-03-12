@@ -7,6 +7,10 @@ import GenderIdentityList from './components/patient/GenderIdentityList';
 import Events from './components/patient/Events'
 import Sidebar from './components/Sidebar';
 import { Route, Routes } from 'react-router-dom';
+import SinglePatientView from './components/patient/SinglePatientView';
+
+import PatientChart from './components/patient/chartAlert/PatientChart';
+import AvailableBed from './components/patient/AvailableBed';
 
 
 const App: React.FC = () => {
@@ -14,11 +18,14 @@ const App: React.FC = () => {
     <Routes>
        <Route path='/' element={<Sidebar/>} />
        <Route path='/PatientList' element={<PatientList/>} />
+       <Route path='/ChartAlert' element={<PatientChart/>} />
+       <Route path='/SinglePatientView' element={<SinglePatientView/>} />
        <Route path='/SearchTypes' element={<SearchTypes/>} />
        <Route path='/PatientListOptional' element={<PatientListOptional/>} />
        <Route path='/GenderIdentityList' element={<GenderIdentityList/>} />
        <Route path='/Events' element={<Events/>} />
        <Route path='/PatientInformation' element={<PatientInformation/>} />
+       <Route path='/AvailableBed' element={<AvailableBed/>}/>
     
       </Routes>
   );
