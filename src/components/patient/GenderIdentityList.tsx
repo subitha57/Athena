@@ -1,7 +1,7 @@
 
-
+import Sidebar from '../Sidebar'
 import React, { useEffect, useState } from 'react';
-
+import './PatientList.css';
 const GenderIdentityList: React.FC = () => {
   const [genderIdentities, setGenderIdentities] = useState<any[]>([]);
 
@@ -10,7 +10,7 @@ const GenderIdentityList: React.FC = () => {
       try {
         const response = await fetch('https://api.preview.platform.athenahealth.com/v1/195900/configuration/patients/genderidentity', {
           headers: {
-            'Authorization': 'Bearer mXH5LEmK7ackItDhuhYaJlLvtJao ',
+            'Authorization': 'Bearer qQMyFQncCZgpTGU0Xh4KjQ5hs1tg ',
             'Content-Type': 'application/json'
           }
         });
@@ -28,6 +28,7 @@ const GenderIdentityList: React.FC = () => {
   }, []);
     return (
     <div>
+       <Sidebar/>
     <h2>Gender Identity Information(Get reference list of patient's gender identity information)</h2>
     <ul>
       {genderIdentities.map((genderIdentity: any) => (

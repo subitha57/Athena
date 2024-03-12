@@ -4,10 +4,10 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
 
-import MenuIcon from '@mui/icons-material/Menu';
+import List from '@mui/material/List';
+import './Sidebar.css';
+
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
@@ -66,19 +66,20 @@ export default function ResponsiveDrawer(props: Props) {
   const drawer = (
     <div>
        <Toolbar />
-      <Divider />   
-      <List>
+      <Divider />
+      <List className='list'>
+      <Button>Chart Alert</Button><br/>
        <Button onClick={HandlerPatientList}>Patient List</Button>
        <Button onClick={HandlerSinglePatient}>Single Patient List</Button>
        <Button onClick={HandlerOptionalList}>PatientList-Optional</Button>
-       <Button onClick={HandlerGenderIdentity}>GenderIdentity</Button>
        <Button onClick={HandlerPatientSearch}>SearchType</Button>
+       <Button onClick={HandlerGenderIdentity}>GenderIdentity</Button>
        <Button onClick={HandlerSubscription}>SubscriptionList</Button>
 
       </List>
       <Divider />
       <List>
-      <Button>Chart Alert</Button>
+      
       </List>
     </div>
   );
@@ -86,6 +87,9 @@ export default function ResponsiveDrawer(props: Props) {
   // Remove this const when copying and pasting into your project.
   const container = window !== undefined ? () => window().document.body : undefined;
 
+  const handleBackButton=()=>{
+    navigate('/')
+  }
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -96,21 +100,12 @@ export default function ResponsiveDrawer(props: Props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-           Athena-Health
-          
-          </Typography>
-          <Button>Back</Button>
+        <Toolbar className='toolbar'>
+         <h1>Athena-Health</h1>
+         
+         <div className='button'>
+            <Button variant="contained" onClick={handleBackButton}>Back</Button>
+         </div>
         </Toolbar>
       </AppBar>
       <Box

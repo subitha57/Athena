@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './PatientList.css';
 import axios from 'axios';
-//import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import Sidebar from '../Sidebar'
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
 const PatientTable: React.FC = () => {
   const [patients, setPatients] = useState([]);
@@ -18,7 +19,7 @@ const PatientTable: React.FC = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const token = 'Gng8FwweRmNZg4TCg0MshfkHiDku'; 
+        const token = 'qQMyFQncCZgpTGU0Xh4KjQ5hs1tg'; 
         const response = await axios.get('https://api.preview.platform.athenahealth.com/v1/195900/patients/enhancedbestmatch?firstname=First&lastname=Name&dob=11%2F11%2F1980', {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -50,10 +51,11 @@ const PatientTable: React.FC = () => {
   };*/}
 
   return (
-    
-   
-    /* <TableContainer component={Paper}>
-    <Table>
+   <div>
+    <Sidebar/>
+     <TableContainer className='table' component={Paper}>
+     <h3>Patient List(Get list of patients - enhanced best matching search criteria)</h3>
+    <Table >
         <TableHead>
           <TableRow>
           <TableCell>First Name</TableCell>
@@ -62,7 +64,7 @@ const PatientTable: React.FC = () => {
           <TableCell>MobileNo</TableCell>
           <TableCell>Gender</TableCell>
           <TableCell>Country</TableCell>
-          <TableCell>Action</TableCell>
+        
           </TableRow>
         </TableHead>
         <TableBody>
@@ -75,15 +77,15 @@ const PatientTable: React.FC = () => {
             <TableCell>{patient.mobilephone}</TableCell>
             <TableCell>{patient.sex}</TableCell>
             <TableCell>{patient.countrycode}</TableCell>
-            <td> <button >Edit</button>
-              <button >Delete</button></td>
+            
               </TableRow>
                ))}
                </TableBody>
       </Table>
-    </TableContainer>*/
-      
-  <div>
+    </TableContainer>
+    </div>
+  /*<div>
+    <Sidebar/>
     <h2>Patient List(Get list of patients - enhanced best matching search criteria)</h2>
     <table className="patient-table">
       <thead>
@@ -94,7 +96,7 @@ const PatientTable: React.FC = () => {
           <th>MobileNo</th>
           <th>Gender</th>
           <th>Country</th>
-          <th>Action</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -106,14 +108,13 @@ const PatientTable: React.FC = () => {
             <td>{patient.mobilephone}</td>
             <td>{patient.sex}</td>
             <td>{patient.countrycode}</td>
-            <td> <button >Edit</button>
-              <button >Delete</button></td>
+            
             </tr>
             // onClick={() => handleEdit(index)}
         ))}
       </tbody>
     </table>
-        </div>
+        </div>*/
   );
 };
 

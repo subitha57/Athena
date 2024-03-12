@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-
+import Sidebar from '../Sidebar';
+import './PatientList.css';
 const SearchTypes: React.FC = () => {
   const [searchTypes, setSearchTypes] = useState<{ name: string, displayname: string }[]>([]);  
 
@@ -9,7 +10,7 @@ const SearchTypes: React.FC = () => {
       try {
         const response = await fetch('https://api.preview.platform.athenahealth.com/v1/195900/configuration/patients/searchtypes', {
           headers: {
-            'Authorization': 'Bearer IQSsgaBlwDYUtOxw8GWlsHfWCV4h',
+            'Authorization': 'Bearer qQMyFQncCZgpTGU0Xh4KjQ5hs1tg',
             'Content-Type': 'application/json'
           }
         });
@@ -28,8 +29,10 @@ const SearchTypes: React.FC = () => {
 
   return (
     <div>
-    <h2>Patient(Returns the list of possible search types to utilize with the /patients/search endpoint)</h2>
-    <TableContainer component={Paper}>
+        <Sidebar/>
+        <TableContainer className='table' component={Paper}>
+    <h3>Patient(Returns the list of possible search types to utilize with the search endpoint)</h3>
+    
       <Table>
         <TableHead>
           <TableRow>
