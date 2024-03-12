@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Table } from "reactstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
-const table = () => {
+
+const PatientTable = () => {
   const endPoint: string =
     "https://api.preview.platform.athenahealth.com/v1/195900/patients/search?searchterm=name";
   const [apiData, setApiData] = useState<any>([]);
@@ -12,7 +13,7 @@ const table = () => {
   const getAPI = async () => {
     const headers = {
       "Content-Type": "application/json",
-      Authorization: "Bearer 1wZ80jJPc8QOV5EC2Jii9QGuQM6G'",
+      Authorization: "Bearer DCPBVape5NTMaL7ah0oF1bqyOjwX",
     };
     try {
       const response = await axios.get(endPoint, {
@@ -101,4 +102,4 @@ const table = () => {
   );
 };
 
-export default table;
+export default PatientTable;

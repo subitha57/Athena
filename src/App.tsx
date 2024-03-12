@@ -9,8 +9,8 @@ import Sidebar from './components/Sidebar';
 import { Route, Routes } from 'react-router-dom';
 import SinglePatientView from './components/patient/SinglePatientView';
 
-import PatientChart from './components/patient/chartAlert/PatientChart';
 import AvailableBed from './components/patient/AvailableBed';
+import PatientTable from './components/patient/chartAlert/PatientTable';
 
 
 const App: React.FC = () => {
@@ -18,7 +18,7 @@ const App: React.FC = () => {
     <Routes>
        <Route path='/' element={<Sidebar/>} />
        <Route path='/PatientList' element={<PatientList/>} />
-       <Route path='/ChartAlert' element={<PatientChart/>} />
+       <Route path='/ChartAlert' element={<PatientTable/>} />
        <Route path='/SinglePatientView' element={<SinglePatientView/>} />
        <Route path='/SearchTypes' element={<SearchTypes/>} />
        <Route path='/PatientListOptional' element={<PatientListOptional/>} />

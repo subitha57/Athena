@@ -63,7 +63,7 @@ export default function ResponsiveDrawer(props: Props) {
     navigate("/Events")
   }
   const HandleChartAlert =()=>{
-    navigate("/PatientChart")
+    navigate("/ChartAlert")
   }
   const HandleAvailableBed=()=>{
     navigate('/AvailableBed')
